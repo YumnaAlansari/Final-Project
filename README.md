@@ -1,4 +1,4 @@
-# Art House application's System 
+# Art House management System 
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -11,14 +11,11 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-          <li><a href="#UML">UML</a></li>
           <li><a href="#Features">Features</a></li>
           <li><a href="#Code-Structure">Code Structure</a></li>
           <li><a href="#How-the-Application-Works">How the Application Works</a></li>
          </ul>
     </li>
- <li><a href="#usage">SQL script</a></li>
- 
   </ol>
 </details>
 
@@ -27,7 +24,7 @@
 ## About The Project
 
 
-Welcome to the ArtHouse application's Data and controller Layer, where I model complex relationships.Where cinema, music and theater all inherit from ArtHouse. Also I manage requests on the server. ArtHouse is an application for managing reservations designed to help manage and acquire data based in specific requirements. In this application, you'll explore how to model complex relationships in a data-driven environment, handle various requests actions, and interact with a MySQL database.
+Welcome to the ArtHouse website, it is a complete website consisting of fronts and backgrounds. ArtHouse is a booking management system designed to help manage and capture data based on specific requirements.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -38,161 +35,60 @@ Welcome to the ArtHouse application's Data and controller Layer, where I model c
 
 ## Features
 
-The ArtHouse application's provides the following features:
-- Get requeste: You can get all the information you want in any class in several ways.
-- Post requeste: You can add a field by entering all the information related to it in any class.
-- Put requeste: You can update any field in the Cinema or Music classes by entering all the information related to it based on the ID number.
-- Patch requeste: You can modify the category property in the Theater class based on the ID number.
-- Delete requeste: You can delete any field in any class based on the ID number.
+The ArtHouse website's provides the following features:
+- Get requeste: You can get all the information you want in any services.
+- Post requeste: You can add a field by entering all the information related to it.
+- Put requeste: You can update any field in the services by entering all the information related to it based on the ID number.
+- Delete requeste: You can delete any field based on the ID number.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Code_Structure
 
-## Model
-In ArtHouse application's, four main classes play a crucial role: ArtHouse, Cinema, Music, and Theater.
+## Components
+In ArtHouse application's, twaalf main services play a crucial role.
 
-### ArtHouse Class
-The ArtHouse class represents a super class in my application. It has the following attributes:
+### Navigation component
+Navigation component contain navogation bar.
 
-- id:A unique identifier 
-- name: name of the child
-- duration: Duration of the child
-### Cinema Class
-The Cinema class represents a child class. It includes:
+### Social component
+Social component contain social bar.
 
-- id: An auto-incremented unique identifier
-- director: Name of the director
-- numberOfActors: Cinema's number of actors 
-- releaseYear: Cinema's releaseYear
-- category: category Cinema's
+### Header component
+Header component represent the home.
 
-### Music Class
-The Music class represents a child class. It includes:
+### Intro component
+Intro component provide description about the site the home.
 
-- id: An auto-incremented unique identifier
-- genre: Music's genre
-- artist: Music's artist
-- releaseYear: Music's release year
+### Content component
+Content component display the main services
 
-### Theater Class
-The Theater class represents a child class. It includes:
+### Cinema component
+Cinema component contain the requests.
 
-- id: An auto-incremented unique identifier
-- playWright: Theater's play wright
-- numberOfActors:  Theater's number of actors
-- category:  Theater's category
+### Theatre component
+Theatre component contain the requests.
 
-## Repository
+### Music component
+Music component contain the requests.
 
-### Cinema Repository
-Have three methods:
-- findCinemaByDirector 
-- findCinemaByReleaseYear
-- findCinemaByCategory
+### Clients component
+Clients component contain the customer feedback.
 
-### Music Repository
-Have three methods:
-- findMusicByGenre 
-- findMusicByArtist 
-- findMusicByReleaseYear
+### Testimonials component
+Testimonials component contain the Testimonials compaines.
 
-### Theatre Repository
-Have three methods:
-- findTheatreByPlayWright 
-- findTheatreByNumberOfActors 
-- findTheatreByCategory
+### Not-found component
+Not-found component apper when user go to wrong page.
+
+## Services
+
+### Content Services 
+Have the http methods and thier API_URL:
 
 
-## Controller 
-There are two basic packages under the controller, the first for implementation and the second for interfaces:
-
-### Interfaces 
-THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the controller.
-
-### Cinema Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the name of the director
-- The fourth displays the data in the database based on the year of release
-- The fifth displays the data in the database based on the category
-
-I also have:
-- Post Request to add
-- Put Request for modification based on the ID number
-- Delete Request for deletion based on the ID number
-
-
-### Music Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the genre
-- The fourth displays the data in the database based on the artist 
-- The fifth displays the data in the database based on the year of release
-
-I also have:
-- Post Request to add
-- Put Request for modification based on the ID number
-- Delete Request for deletion based on the ID number
-
-
-### Theatre Controller
-I have five get requests under the cinema category:
-- The first displays all the data in the database
-- The second displays the data in the database based on the ID number
-- The third displays the data in the database based on the play wright
-- The fourth displays the data in the database based on the number of actors 
-- The fifth displays the data in the database based on the category
-
-I also have:
-- Post Request to add
-- Patch Request for modification the category based on the ID number
-- Delete Request for deletion based on the ID number
-
-### Theatre DTO 
-To deal with patch category request
-
-## Service
-There are two basic packages under the Service, the first for implementation and the second for interfaces:
-
-### CinemaService
-Have 8 eight methods:
-- getAllCinema
-- getCinemaById
-- getCinemaByDirector
-- getCinemaByReleaseYear
-- getCinemaByCategory
-- addCinema
-- updateMusicById
-
-
-### MusicService
-Have 8 eight methods:
-- getAllMusic
-- getMusicById
-- getMusicByGenre
-- getMusicByArtist
-- getMusicByReleaseYear
-- updateMusicById
-- addMusic
-- deleteById
-
-### TheatreService
-Have 8 eight methods:
-- getAllTheatre
-- getTheatreById
-- getTheatreByPlayWright
-- getTheatreByNumberOfActors
-- getTheatreByCategory
-- changeTheatreCategory
-- addTheatre
-- deleteTheatreById
-
-
-## Interfaces 
-THere are three interfaces (Cinema, Music and Theatre) displays the signature of all the methods used in the services.
+## App routing 
+App routing contain the requiered component and thier path 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
