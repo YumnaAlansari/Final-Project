@@ -9,7 +9,7 @@ import { ContentService } from 'src/app/services/content.service';
 export class CinemaComponent {
 
   cinemaList: any[] = [];
-  id: number = 19;
+  id: number = 25;
 
   constructor(private contentService: ContentService){}
 
