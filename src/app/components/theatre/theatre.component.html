@@ -1,0 +1,8 @@
+<app-header></app-header>
+<button (click)="getTheatre()" > Get Theatre</button>
+<ul>
+  <li *ngFor="let theatre of theatreList">
+    <p> {{theatre.id}} - {{theatre.playWright}} - {{theatre.numberOfActors}} - {{theatre.category}}  </p>
+  </li>
+</ul>
+

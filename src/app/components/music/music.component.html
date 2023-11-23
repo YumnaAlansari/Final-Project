@@ -1,0 +1,9 @@
+
+<app-header></app-header>
+<button (click)="getMusic()" > Get All Music!</button>
+
+<ul>
+  <li *ngFor="let music of musicList">
+    <p> {{music.id}} - {{music.genre}} - {{music.artist}} - {{music.releaseYear}}  </p>
+  </li>
+</ul>

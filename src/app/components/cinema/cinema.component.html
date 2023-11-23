@@ -1,0 +1,16 @@
+<app-header></app-header>
+<button (click)="getCinema()" > Get cinema</button>
+<br>
+<!--
+<input type="text" placeholder="Write cinema id" [(ngModel)]="id"> -->
+<button (click)="postCinema()" > Post cinema</button>
+<br>
+<button (click)="putCinema()" > Put cinema</button>
+<br>
+<button (click)="delateCinema()" > Delete cinema</button>
+
+<ul>
+  <li *ngFor="let cinema of cinemaList">
+    <p> {{cinema.id}} - {{cinema.director}} - {{cinema.numberOfActors}} - {{cinema.releaseYear}} - {{cinema.category}} </p>
+  </li>
+</ul>
