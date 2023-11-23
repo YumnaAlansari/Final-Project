@@ -9,7 +9,7 @@ import { ContentService } from 'src/app/services/content.service';
 export class CinemaComponent {
 
   cinemaList: any[] = [];
-  id: number = 3;
+  id: number = 19;
 
   constructor(private contentService: ContentService){}
 
@@ -30,7 +30,7 @@ export class CinemaComponent {
     id: 70,
     name: "The Paremt",
     duration: 120.50,
-    director: "sara",
+    director: "Steven Spielberg ",
     numberOfActors: 9,
     releaseYear: 2022,
     category: "Drama"
@@ -52,10 +52,10 @@ putCinema(): void {
   id: this.id,
   name: "The Paremt",
   duration: 130.50,
-  director: "sara",
+  director: "Sidney Lumet ",
   numberOfActors: 9,
   releaseYear: 2022,
-  category: "Drama"
+  category: "Crime"
 };
 
 this.contentService.putCinema(this.id, body).subscribe({
